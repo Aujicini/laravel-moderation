@@ -1,44 +1,56 @@
 {
-  "name": "hootlex/laravel-moderation",
-  "description": "A simple Content Moderation System for Laravel 5.* that allows you to Approve or Reject resources like posts, comments, users, etc.",
-  "keywords": [
-    "laravel",
-    "moderation",
-    "moderation-system",
-    "content-moderation"
-  ],
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Alex Kyriakidis",
-      "email": "hootlex@icloud.com"
-    }
-  ],
-  "autoload-dev": {
-    "classmap": [
-      "tests",
-      "vendor/laravel/laravel/tests"
-    ]
-  },
-  "require": {
-    "php": ">=5.4.0"
-  },
-  "require-dev": {
-    "phpunit/phpunit": "7.0",
-    "laravel/laravel": "5.*",
-    "nunomaduro/collision": "^2.0",
-    "beyondcode/laravel-dump-server": "~1.0"
-  },
-  "autoload": {
-    "psr-4": {
-      "Hootlex\\Moderation\\": "src/"
-    }
-  },
-  "extra": {
-    "laravel": {
-      "providers": [
-        "Hootlex\\Moderation\\ModerationServiceProvider"
-      ]
-    }
-  }
+    "name": "oxuwazet/laravel-moderation",
+    "description": "A simple content moderation system for Laravel.",
+    "keywords": [
+        "laravel",
+        "moderation",
+        "moderation-system",
+        "content-moderation"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alex Kyriakidis",
+            "email": "hootlex@icloud.com"
+        },
+        {
+            "name": "Nicholas English",
+            "email": "oxuwazet@gmail.com"
+        }
+    ],
+    
+    "require": {
+        "php": ">=7.1.3"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^3.8|^4.0|^5.0",
+        "phpunit/phpunit": "^8.0|^9.0",
+        "nunomaduro/collision": "^2.0",
+        "beyondcode/laravel-dump-server": "~1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Oxuwazet\\Moderation\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Oxuwazet\\Moderation\\ModerationServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
