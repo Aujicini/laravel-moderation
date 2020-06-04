@@ -1,8 +1,6 @@
 <?php
 
-namespace Hootlex\Moderation;
-
-
+namespace Oxuwazet\Moderation;
 
 trait Moderatable
 {
