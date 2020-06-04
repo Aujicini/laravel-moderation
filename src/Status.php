@@ -1,7 +1,6 @@
 <?php
 
-namespace Hootlex\Moderation;
-
+namespace Oxuwazet\Moderation;
 
 class Status
 {
