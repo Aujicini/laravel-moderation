@@ -1,6 +1,6 @@
 <?php
 
-use Hootlex\Moderation\Tests\Post;
+use Oxuwazet\Moderation\Tests\Post;
 use Tests\TestCase;
 
 
