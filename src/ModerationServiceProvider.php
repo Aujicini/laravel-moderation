@@ -1,6 +1,6 @@
 <?php
 
-namespace Hootlex\Moderation;
+namespace Oxuwazet\Moderation;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -14,7 +14,7 @@ class ModerationServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/config/moderation.php' => config_path('moderation.php')
+            __DIR__ . '/../configuration/moderation.php' => config_path('moderation.php')
         ], 'config');
     }
 
@@ -25,6 +25,5 @@ class ModerationServiceProvider extends ServiceProvider
      */
     public function register()
     {
-
     }
 }
