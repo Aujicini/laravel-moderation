@@ -1,6 +1,6 @@
 <?php
 
-namespace Hootlex\Moderation;
+namespace Oxuwazet\Moderation;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
