@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ipbans extends Model
 {
+    /** @var string $table The table associated with the model. */
+    protected $table = 'ipbans';
+
     /**
      * Get the user that owns the ipban.
      *
