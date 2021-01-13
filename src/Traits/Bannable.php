@@ -28,29 +28,37 @@ trait Bannable
     }
 
     /**
+     * Get the ipban associated with the user.
+     *
+     * @return mixed Returns the relationship.
+     */
+    public function ipban()
+    {
+        return $this->hasOne(Ipbans::class);
+    }
+
+    /**
      * Check to see if the current user is banned.
      *
      * @return bool Returns true if the user is banned and false if not.
      */
     public function isBanned()
     {
-        return $this->banned
+        return $this->ipban() || $this->banned
     }
 
     /**
      * Unban this current user.
      *
-     * @param bool $ipBan Should we ip ban the user.
-     *
      * @return void Returns nothing.
      */
-    public function unban($ipBan = false)
+    public function unban()
     {
         if ($this->banned) {
             $this->banned = false;
             $this->save();
-            if (DB::table('ipbans')->where('user_id', $this->id)->get())
-                DB::table('ipbans')->where('user_id', $this->id)->delete()
+            if ($ipBan = $this->ipban())
+                $ipBan->delete()
         }
     }
 }
