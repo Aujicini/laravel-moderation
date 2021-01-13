@@ -8,6 +8,16 @@ use Illuminate\Support\Facades\DB;
 trait Bannable
 {
     /**
+     * Can this user ban other user models.
+     *
+     * @return bool Returns true if this user can ban and false if not.
+     */
+    public function canBan()
+    {
+        return true;
+    }
+
+    /**
      * Ban this current user.
      *
      * @param bool $ipBan Should we ip ban the user.
@@ -25,6 +35,16 @@ trait Bannable
                     'ip'      => request()->ip(),
                 ]);
         }
+    }
+
+    /**
+     * Can this user be banned by other user models.
+     *
+     * @return bool Returns true if this user can be banned and false if not.
+     */
+    public function bannable()
+    {
+        return true;
     }
 
     /**
