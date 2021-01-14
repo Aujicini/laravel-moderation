@@ -30,8 +30,8 @@ trait Bannable
             $this->save();
             if ($ipBan)
                 Ipbans::create([
-                    'user_id' => $this->id,
-                    'ip'      => request()->ip(),
+                    'user_id'    => $this->id,
+                    'ip_address' => request()->ip(),
                 ]);
         }
     }
