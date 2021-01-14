@@ -16,7 +16,7 @@ class CreateIpbansTable extends Migration
         Schema::create('ipbans', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_id')->unsigned()->nullable();
-            $table->string('ip_address', 45)->nullable();
+            $table->string('ipban', 45)->nullable();
             $table->timestamps();
         });
     }
