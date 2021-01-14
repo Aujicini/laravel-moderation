@@ -1,11 +1,9 @@
 <?php
 
-namespace Oxuwazet\Moderation;
+namespace Aujicini\Moderation;
 
-class Status
+class Moderation
 {
-    const PENDING = 0;
-    const APPROVED = 1;
-    const REJECTED = 2;
-    const POSTPONED = 3;
+    /** @var bool $runsMigrations Should we run the migrations. */
+    public static $runsMigrations = true;
 }
