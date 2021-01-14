@@ -3,7 +3,6 @@
 namespace Aujicini\Moderation\Traits;
 
 use Aujicini\Moderation\Models\Ipbans;
-use Illuminate\Support\Facades\DB;
 
 trait Bannable
 {
