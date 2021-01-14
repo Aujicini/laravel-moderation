@@ -56,9 +56,14 @@ abstract class TestCase extends Orchestra
      */
     protected function setUpDatabase($app)
     {
+        $app['db']->connection()->getSchemaBuilder()->create('users', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name')->nullable();
+            $table->string('email')->unique();
+            $table->timestamps();
+        });
         include_once __DIR__.'/../database/migrations/2021_01_03_000002_create_ipbans_table.php';
         include_once __DIR__.'/../database/migrations/2021_01_03_000003_add_banned_columns.php';
-        
         (new \CreateIpbansTable())->up();
         (new \AddBannedColumns())->up();
     }
