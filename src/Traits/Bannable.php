@@ -76,7 +76,7 @@ trait Bannable
         if ($this->banned) {
             $this->banned = false;
             $this->save();
-            if ($ipBan = $this->ipban())
+            if ($ipBan = $this->ipban)
                 $ipBan->delete();
         }
     }
