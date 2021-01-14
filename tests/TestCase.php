@@ -14,6 +14,9 @@ abstract class TestCase extends Orchestra
     {
         parent::setUp();
         $this->setUpDatabase($this->app);
+        User::create([
+            'email' => 'test@test.com'
+        ]);
     }
 
     /**
