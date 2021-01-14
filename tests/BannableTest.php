@@ -22,10 +22,10 @@ class BannableTest extends TestCase
         $user->ban();
         $this->assertNull($user->ipban);
         $user->unban();
-        $this->assertNull($user->ipban->ip_address);
+        $this->assertNull($user->ipban);
         $user->ban(true);
-        $this->assertTrue(is_string($user->ipban->ip_address));
+        $this->assertTrue(is_string($user->ipban));
         $user->unban();
-        $this->assertNull($user->ipban->ip_address);
+        $this->assertNull($user->ipban);
     }
 }
