@@ -10,7 +10,7 @@ class Ipbans extends Model
     /** @var string $fillable The attributes that are mass assignable. */
     protected $fillable = [
         'user_id',
-    ]
+    ];
 
     /** @var string $table The table associated with the model. */
     protected $table = 'ipbans';
