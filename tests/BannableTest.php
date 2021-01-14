@@ -1,6 +1,6 @@
 <?php
 
-namespace Aujicini\Moderation\Tests;
+namespace Aujicini\Moderation\Test;
 
 class BannableTest extends TestCase
 {
