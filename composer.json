@@ -22,12 +22,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Aujicini\\Moderation\\": "src/"
+            "Aujicini\\Moderation\\": "./src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Aujicini\\Moderation\\Tests\\": "tests/"
+            "Aujicini\\Moderation\\Test\": "./tests"
         }
     },
     "extra": {
