@@ -63,7 +63,7 @@ trait Bannable
      */
     public function isBanned()
     {
-        return $this->ipban() || $this->banned;
+        return $this->banned;
     }
 
     /**
