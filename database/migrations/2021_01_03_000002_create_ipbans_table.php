@@ -14,7 +14,7 @@ class CreateIpbansTable extends Migration
     public function up()
     {
         Schema::create('ipbans', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->foreignId('user_id')->nullable();
             $table->string('ip_address', 45)->nullable();
             $table->timestamps();
