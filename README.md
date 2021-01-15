@@ -14,9 +14,9 @@ A simple content moderation system for your fresh Laravel Application.
 
 ## Support Laravel Versions
 
-- <b>Laravel 8 | Current</b>
-- <b>Laravel 7 | Support ends 01/01/2022</b>
-- <b>Laravel 6 | Support ends 01/01/2022</b>
+- <i><b>Laravel 8 | Current</b></i>
+- <i><b>Laravel 7 | Support ends 01/01/2022</b></i>
+- <i><b>Laravel 6 | Support ends 11/01/2021</b></i>
 
 ## Features
 
