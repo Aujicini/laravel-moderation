@@ -1,8 +1,7 @@
-# Laravel Moderation [![Build Status](https://travis-ci.org/hootlex/laravel-moderation.svg?branch=v1.0.11)](https://travis-ci.org/hootlex/laravel-moderation) [![Version](https://img.shields.io/packagist/v/hootlex/laravel-moderation.svg?style=flat)](https://packagist.org/packages/hootlex/laravel-moderation)  [![Total Downloads](https://img.shields.io/packagist/dt/hootlex/laravel-moderation.svg?style=flat)](https://packagist.org/packages/hootlex/laravel-moderation) [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](LICENSE)
-A simple Moderation System for Laravel 5.* that allows you to Approve or Reject resources like posts, comments, users, etc.
-
-Keep your application pure by preventing offensive, irrelevant, or insulting content.
-
+![Run Tests - Current](https://github.com/Aujicini/laravel-moderation/workflows/Run%20Tests%20-%20Current/badge.svg)
+![Run Tests - Older](https://github.com/Aujicini/laravel-moderation/workflows/Run%20Tests%20-%20Older/badge.svg)
+# Laravel Moderation
+A simple content moderation system for your fresh Laravel Application.
 ## Possible Use Case
 
 1. User creates a resource (a post, a comment or any Eloquent Model).
