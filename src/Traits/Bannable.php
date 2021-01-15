@@ -2,8 +2,8 @@
 
 namespace Aujicini\Moderation\Traits;
 
-use Aujicini\Events\Banned;
-use Aujicini\Events\Unbanned;
+use Aujicini\Moderation\Events\Banned;
+use Aujicini\Moderation\Events\Unbanned;
 
 trait Bannable
 {
