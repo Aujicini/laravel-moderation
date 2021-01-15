@@ -15,6 +15,7 @@ class AddBannedColumns extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->boolean('banned')->default(false)->nullable();
+            $table->boolean('ipbanned')->default(false)->nullable();
         });
     }
 
@@ -26,7 +27,7 @@ class AddBannedColumns extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('banned');
+            $table->dropColumn('banned', 'ipbanned');
         });
     }
 }
