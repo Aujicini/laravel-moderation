@@ -62,9 +62,7 @@ abstract class TestCase extends Orchestra
             $table->string('email')->unique();
             $table->timestamps();
         });
-        include_once __DIR__.'/../database/migrations/2021_01_03_000002_create_ipbans_table.php';
         include_once __DIR__.'/../database/migrations/2021_01_03_000003_add_banned_columns.php';
-        (new \CreateIpbansTable())->up();
         (new \AddBannedColumns())->up();
     }
 }
