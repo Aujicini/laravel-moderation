@@ -2,6 +2,9 @@
 
 namespace Aujicini\Moderation\Traits;
 
+use Aujicini\Events\Banned;
+use Aujicini\Events\Unbanned;
+
 trait Bannable
 {
     /**
@@ -28,6 +31,7 @@ trait Bannable
             $this->ipbanned = $ipBan;
             $this->save();
         }
+        Banned::dispatch($user);
     }
 
     /**
@@ -72,5 +76,6 @@ trait Bannable
             $this->ipbanned = false;
             $this->save();
         }
+        Unbanned::dispatch($user);
     }
 }
