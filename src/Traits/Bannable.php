@@ -51,6 +51,16 @@ trait Bannable
     }
 
     /**
+     * Check to see if the current user is ip banned.
+     *
+     * @return bool Returns true if the user is ip banned and false if not.
+     */
+    public function isIpBanned()
+    {
+        return $this->ipbanned;
+    }
+
+    /**
      * Unban this current user.
      *
      * @return void Returns nothing.
