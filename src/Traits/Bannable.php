@@ -31,7 +31,7 @@ trait Bannable
             $this->ipbanned = $ipBan;
             $this->save();
         }
-        Banned::dispatch($user);
+        Banned::dispatch($this);
     }
 
     /**
@@ -76,6 +76,6 @@ trait Bannable
             $this->ipbanned = false;
             $this->save();
         }
-        Unbanned::dispatch($user);
+        Unbanned::dispatch($this);
     }
 }
