@@ -18,6 +18,16 @@ trait Bannable
     }
 
     /**
+     * Can this user ip ban other user models.
+     *
+     * @return bool Returns true if this user can ip ban and false if not.
+     */
+    public function canIpBan()
+    {
+        return true;
+    }
+
+    /**
      * Ban this current user.
      *
      * @param bool $ipBan Should we ip ban the user.
@@ -40,6 +50,16 @@ trait Bannable
      * @return bool Returns true if this user can be banned and false if not.
      */
     public function bannable()
+    {
+        return true;
+    }
+
+    /**
+     * Can this user be ip banned by other user models.
+     *
+     * @return bool Returns true if this user can be ip banned and false if not.
+     */
+    public function ipBannable()
     {
         return true;
     }
