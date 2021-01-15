@@ -5,12 +5,12 @@
 
 A simple content moderation system for your fresh Laravel Application.
 
-# Supported PHP Versions
+## Supported PHP Versions
 
-- PHP 8.0 | Current
-- PHP 7.4 | Current
-- PHP 7.3 | Support ends 1/1/2022
-- PHP 7.2 | Support ends 11/1/2021
+- <b>PHP 8.0 | Current</b>
+- <b>PHP 7.4 | Current</b>
+- <b>PHP 7.3 | Support ends 01/01/2022</b>
+- <b>PHP 7.2 | Support ends 11/01/2021</b>
 
 ## Features
 
