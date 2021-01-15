@@ -2,8 +2,6 @@
 
 namespace Aujicini\Moderation\Traits;
 
-use Aujicini\Moderation\Models\Ipbans;
-
 trait Bannable
 {
     /**
@@ -27,12 +25,8 @@ trait Bannable
     {
         if (!$this->banned) {
             $this->banned = true;
+            $this->ipbanned = $ipBan;
             $this->save();
-            if ($ipBan)
-                Ipbans::create([
-                    'user_id' => $this->id,
-                    'ipban'   => request()->ip(),
-                ]);
         }
     }
 
@@ -44,16 +38,6 @@ trait Bannable
     public function bannable()
     {
         return true;
-    }
-
-    /**
-     * Get the ipban associated with the user.
-     *
-     * @return mixed Returns the relationship.
-     */
-    public function ipban()
-    {
-        return $this->hasOne(Ipbans::class);
     }
 
     /**
@@ -75,9 +59,8 @@ trait Bannable
     {
         if ($this->banned) {
             $this->banned = false;
+            $this->ipbanned = false;
             $this->save();
-            if ($ipBan = $this->ipban)
-                $ipBan->delete();
         }
     }
 }
