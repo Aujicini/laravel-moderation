@@ -12,7 +12,7 @@ trait Bannable
      *
      * @return bool Returns true if this user can ban and false if not.
      */
-    public function canBan()
+    public function canBan($user)
     {
         return true;
     }
@@ -22,7 +22,7 @@ trait Bannable
      *
      * @return bool Returns true if this user can ip ban and false if not.
      */
-    public function canIpBan()
+    public function canIpBan($user)
     {
         return true;
     }
@@ -49,7 +49,7 @@ trait Bannable
      *
      * @return bool Returns true if this user can be banned and false if not.
      */
-    public function bannable()
+    public function bannable($user)
     {
         return true;
     }
@@ -59,7 +59,7 @@ trait Bannable
      *
      * @return bool Returns true if this user can be ip banned and false if not.
      */
-    public function ipBannable()
+    public function ipBannable($user)
     {
         return true;
     }
