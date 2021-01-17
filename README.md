@@ -20,6 +20,7 @@ A simple content moderation system for your fresh Laravel Application.
 
 ## Features
 
+- Ticketing System
 - User Ban Management
 - User Impersonation
 
@@ -30,3 +31,11 @@ It's very easy to install, just run the one liner comand line code.
 ```sh
 composer require aujicini/laravel-moderation
 ```
+
+This package will auto-register it's self, but if you prefer to register the service provider manually then you add this line in your `config/app.php` file in the providers array.
+
+```php
+\Aujicini\Moderation\ModerationServiceProvider::class,
+```
+
+## Basic Usage
