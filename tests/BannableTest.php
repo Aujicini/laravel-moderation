@@ -15,10 +15,10 @@ class BannableTest extends TestCase
     {
         Event::fake();
         $user = User::find(1);
-        $this->assertTrue($user->canBan());
-        $this->assertTrue($user->bannable());
-        $this->assertTrue($user->canIpBan());
-        $this->assertTrue($user->ipBannable());
+        $this->assertTrue($user->canBan($user));
+        $this->assertTrue($user->bannable($user));
+        $this->assertTrue($user->canIpBan($user));
+        $this->assertTrue($user->ipBannable($user));
         $this->assertTrue(!$user->isBanned());
         $user->ban();
         Event::assertDispatched(Banned::class, function ($event) use ($user) {
