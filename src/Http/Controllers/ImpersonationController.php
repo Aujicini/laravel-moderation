@@ -5,7 +5,6 @@ namespace Aujicini\Moderation\Http\Controllers;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
 
 class ImpersonationController extends BaseController
 {
@@ -26,7 +25,7 @@ class ImpersonationController extends BaseController
             abort(403);
         }
         Auth::user()->impersonate($user);
-        return redirect()->to(config('moderation.impersonation_take_location'));
+        return $request->wantsJson() ? new JsonResponse('', 200) : redirect()->to(config('moderation.impersonation_take_location'));
     }
 
     /**
@@ -40,6 +39,6 @@ class ImpersonationController extends BaseController
             abort(403);
         }
         Auth::user()->leaveImpersonation();
-        return redirect()->to(config('moderation.impersonation_leave_location'));
+        return $request->wantsJson() ? new JsonResponse('', 200) : redirect()->to(config('moderation.impersonation_leave_location'));
     }
 }
