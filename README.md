@@ -7,16 +7,16 @@ A simple content moderation system for your fresh Laravel Application.
 
 ## Supported PHP Versions
 
-- <i><b>PHP 8.0 | Current</b></i>
-- <i><b>PHP 7.4 | Current</b></i>
-- <i><b>PHP 7.3 | Support ends 01/01/2022</b></i>
-- <i><b>PHP 7.2 | Support ends 11/01/2021</b></i>
+- <i>PHP 8.0 | Current</i>
+- <i>PHP 7.4 | Current</i>
+- <i>PHP 7.3 | Support ends 01/01/2022</i>
+- <i>PHP 7.2 | Support ends 11/01/2021</i>
 
 ## Support Laravel Versions
 
-- <i><b>Laravel 8 | Current</b></i>
-- <i><b>Laravel 7 | Support ends 01/01/2022</b></i>
-- <i><b>Laravel 6 | Support ends 11/01/2021</b></i>
+- <i>Laravel 8 | Current</i>
+- <i>Laravel 7 | Support ends 01/01/2022</i>
+- <i>Laravel 6 | Support ends 11/01/2021</i>
 
 ## Features
 
