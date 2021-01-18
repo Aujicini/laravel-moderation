@@ -27,7 +27,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Aujicini\\Moderation\\Test\\": "./tests"
+            "Aujicini\\Moderation\\Test\\": "./tests",
             "App\\Models\\": "./models"
         }
     },
