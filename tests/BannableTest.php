@@ -14,7 +14,7 @@ class BannableTest extends TestCase
     public function user_is_banned()
     {
         Event::fake();
-        $user = User::find(1);
+        $user = \App\Models\User::find(1);
         $this->assertTrue($user->canBan($user));
         $this->assertTrue($user->bannable($user));
         $this->assertTrue($user->canIpBan($user));
