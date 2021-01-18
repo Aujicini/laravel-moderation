@@ -2,6 +2,7 @@
 
 namespace Aujicini\Moderation\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
@@ -17,7 +18,7 @@ class BanController extends BaseController
      */
     public function ban($id)
     {
-        $user = $this->find($id);
+        $user = User::find($id);
         if (!$user) {
             abort(403);
         }
@@ -40,7 +41,7 @@ class BanController extends BaseController
      */
     public function ipban($id)
     {
-        $user = $this->find($id);
+        $user = User::find($id);
         if (!$user) {
             abort(403);
         }
@@ -63,7 +64,7 @@ class BanController extends BaseController
      */
     public function unban($id)
     {
-        $user = $this->find($id);
+        $user = User::find($id);
         if (!$user) {
             abort(403);
         }
@@ -74,24 +75,5 @@ class BanController extends BaseController
         return $request->wantsJson()
             ? new JsonResponse('', 200)
             : redirect()->to(config('moderation.unban_location'));
-    }
-
-    /**
-     * Find the user by id.
-     *
-     * @param string $id The user to lookup.
-     *
-     * @return \Illuminate\Http\RedirectResponse Returns the user instance.
-     */
-    protected function find($id)
-    {
-        $container = app();
-        $guardName = $container['config']->get('auth.default.guard', 'web');
-        $providerName = $container['config']->get("auth.guards.$guardName.provider");
-        $userProvider = $container['auth']->createUserProvider($providerName);
-        if (!($modelInstance = $userProvider->retrieveById($id))) {
-            return null;
-        }
-        return $modelInstance;
     }
 }
