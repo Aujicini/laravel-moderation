@@ -31,8 +31,7 @@ class ModerationServiceProvider extends ServiceProvider
     /**
      * Register routes macro.
      *
-     * @param void
-     * @return  void
+     * @return void Returns nothing.
      */
     protected function registerRoutesMacro()
     {
