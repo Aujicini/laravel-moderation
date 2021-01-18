@@ -51,17 +51,20 @@ class BannableTest extends TestCase
             return $event->user === $user;
         });
         $this->assertTrue(!$user->isIpBanned());
-        $this->actingAs($user);
         $response = $this->call('GET', '/moderation/ban/1');
+        var_dump($response);
         $this->assertEquals(200, $response->status());
         $this->assertTrue($user->isBanned());
         $response = $this->call('GET', '/moderation/unban/1');
+        var_dump($response);
         $this->assertEquals(200, $response->status());
         $this->assertTrue(!$user->isBanned());
         $response = $this->call('GET', '/moderation/ipban/1');
+        var_dump($response);
         $this->assertEquals(200, $response->status());
         $this->assertTrue($user->isIpBanned());
         $response = $this->call('GET', '/moderation/unban/1');
+        var_dump($response);
         $this->assertEquals(200, $response->status());
         $this->assertTrue(!$user->isBanned());
     }
