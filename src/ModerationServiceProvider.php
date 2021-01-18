@@ -13,6 +13,7 @@ class ModerationServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->registerRoutesMacro();
         $this->registerMigrations();
         $this->registerPublishing();
     }
@@ -25,6 +26,25 @@ class ModerationServiceProvider extends ServiceProvider
     public function register()
     {
         $this->configure();
+    }
+
+    /**
+     * Register routes macro.
+     *
+     * @param void
+     * @return  void
+     */
+    protected function registerRoutesMacro()
+    {
+        $router = $this->app['router'];
+        $router->macro('ban', function () use ($router) {
+            $router->get('/moderation/ban/{id}',
+                'Aujicini\Moderation\Http\Controllers\BanController@ban')->name('ban.user');
+            $router->get('/moderation/ipban/{id}',
+                'Aujicini\Moderation\Http\Controllers\BanController@ipban')->name('ipban.user');
+            $router->get('/moderation/unban/{id}',
+                'Aujicini\Moderation\Http\Controllers\BanController@unban')->name('unban.user');
+        });
     }
 
     /**
@@ -60,7 +80,7 @@ class ModerationServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config/moderation.php' => $this->app->configPath('cashier.php'),
+                __DIR__.'/../config/moderation.php' => $this->app->configPath('moderation.php'),
             ], 'moderation-config');
             $this->publishes([
                 __DIR__.'/../database/migrations' => $this->app->databasePath('migrations'),
