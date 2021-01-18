@@ -4,14 +4,17 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Strict Moderation
+    | IP Ban, Ban, and Unban Location
     |--------------------------------------------------------------------------
     |
-    | If this is set to true then the default query will return only approved resources.
-    | In other case, all resources except Rejected ones, will be returned as well.
+    | The location to redirect to after ip banning a user.
+    | The location to redirect to after banning a user.'
+    | The location to redirect to after unbanning a user.
     |
     */
 
-    'strict' => true,
+    'ban_location' => '/',
+    'ipban_location' => '/',
+    'unban_location' => '/',
 
 ];
