@@ -3,17 +3,22 @@
 namespace Aujicini\Moderation\Test;
 
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Schema;
 use Orchestra\Testbench\TestCase as Orchestra;
 use Aujicini\Moderation\ModerationServiceProvider;
 
 abstract class TestCase extends Orchestra
 {
+    /**
+     * Setup the laravel test application.
+     *
+     * @return void Returns nothing.
+     */
     public function setUp(): void
     {
         parent::setUp();
         $this->setUpDatabase($this->app);
+        $this->setUpRoutes();
         User::create([
             'email' => 'test@test.com'
         ]);
@@ -22,8 +27,9 @@ abstract class TestCase extends Orchestra
     /**
      * Get the package providers.
      *
-     * @param  \Illuminate\Foundation\Application  $app
-     * @return array
+     * @param  \Illuminate\Foundation\Application $app The laravel test application.
+     *
+     * @return array Returns a list of service providers.
      */
     protected function getPackageProviders($app)
     {
@@ -35,8 +41,9 @@ abstract class TestCase extends Orchestra
     /**
      * Set up the environment.
      *
-     * @param  \Illuminate\Foundation\Application  $app
-     * @return void
+     * @param \Illuminate\Foundation\Application $app The laravel test application.
+     *
+     * @return void Returns nothing.
      */
     protected function getEnvironmentSetUp($app)
     {
@@ -51,8 +58,9 @@ abstract class TestCase extends Orchestra
     /**
      * Set up the database.
      *
-     * @param  \Illuminate\Foundation\Application  $app
-     * @return void
+     * @param \Illuminate\Foundation\Application $app The laravel test application.
+     *
+     * @return void Returns nothing.
      */
     protected function setUpDatabase($app)
     {
@@ -62,7 +70,20 @@ abstract class TestCase extends Orchestra
             $table->string('email')->unique();
             $table->timestamps();
         });
+        include_once __DIR__.'/../database/migrations/2021_01_03_000002_add_ip_columns.php';
         include_once __DIR__.'/../database/migrations/2021_01_03_000003_add_banned_columns.php';
+        (new \AddIpColumns())->up();
         (new \AddBannedColumns())->up();
+    }
+
+    /**
+     * Set up the applications routes.
+     *
+     * @return void Returns nothing.
+     */
+    protected function setUpRoutes()
+    {
+        $this->app['router']->ban();
+        $this->app['router']->getRoutes()->refreshNameLookups();
     }
 }
